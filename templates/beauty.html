@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Beauty - reduceri pentru femei frumoase
+{% endblock %}
+
+
+{% block body %}
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-4 w3-display-container w3-opacity-min" id="beauty">
+    <div class="w3-display-middle" style="white-space:nowrap;">
+      <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">TOTUL <span class="w3-hide-small"> PENTRU </span>A FI FRUMOASA</span>
+    </div>
+  </div>
+
+<br> 
+<div class="beauty_h1"> 
+  <h1> Prinde cele mai bune reduceri pentru infrumusetare! </h1>
+</div>
+
+<br> 
+<br>
+<br>
+    <!-- Let's do it with for Jinja -->
+    <div class="w3-row w3-grayscale">
+    {% for row in list_with_html_code %}
+      <div class="w3-col l3 s6">{{ row|safe }}</div>
+    {% endfor %}
+    </div>
+    
+    <br> 
+
+{% endblock %}
+

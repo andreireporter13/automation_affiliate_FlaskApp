@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel= "stylesheet" href= "{{ url_for('static',filename='css/style.css') }}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+      
+    </a>
+    <a href="/home" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>  
+    <a href="/reduceri-beauty" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-female"></i> BEAUTY</a>
+    <a href="/reduceri-books" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-book"></i> BOOKS</a>
+    <a href="/reduceri-sport" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-heart"></i> SPORT</a>
+    <a href="/reduceri-fashion" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-shopping-bag"></i> FASHION</a>
+    <a href="/reduceri-home-deco" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-home"></i> HOME DECO</a>
+    <a href="/reduceri-pentru-babies" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-child"></i> BABIES</a>
+    <a href="/reduceri-jocuri" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-gamepad"></i> JOCURI</a>
+    <a href="/reduceri-pentru-calatorii" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-globe"></i> CALATORII</a>
+    <a href="/reduceri-la-maruntisuri" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-shopping-basket"></i> MARUNTISURI</a>
+    <a href="/contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="/reduceri-beauty" class="w3-bar-item w3-button" onclick="toggleFunction()">BEAUTY</a>
+    <a href="/reduceri-books" class="w3-bar-item w3-button" onclick="toggleFunction()">BOOKS</a>
+    <a href="/reduceri-sport" class="w3-bar-item w3-button" onclick="toggleFunction()">SPORT</a>
+    <a href="/reduceri-fashion" class="w3-bar-item w3-button" onclick="toggleFunction()">FASHION</a>
+    <a href="/reduceri-home-deco" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME DECO</a>
+    <a href="/reduceri-pentru-babies" class="w3-bar-item w3-button" onclick="toggleFunction()">BABIES</a>
+    <a href="/reduceri-jocuri" class="w3-bar-item w3-button" onclick="toggleFunction()">JOCURI</a>
+    <a href="/reduceri-pentru-calatorii" class="w3-bar-item w3-button" onclick="toggleFunction()">CALATORII</a>
+    <a href="/reduceri-la-maruntisuri" class="w3-bar-item w3-button" onclick="toggleFunction()">MARUNTISURI</a>
+    <a href="/contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+  </div>
+</div>
+
+  <!--Block Body-->
+  {% block body %}
+  
+  {% endblock %}
+  <!--End Block Body-->
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <a href="https://www.facebook.com/pagina13.cu.reduceri.automatizate" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/ideisioferte/" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://twitter.com/andrei_reporter" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/in/andrei-cojocaru-985932204/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  </div>
+  <br>
+  <div class="form">
+    <h4>Newsletter de reduceri automatizate!</h4>
+     <form id="search-form" class="form-search form-horizontal">
+         <input type="text" class="input-search" placeholder="Adresa de Email"> <br> <br>
+         <button type="submit" class="btn-search">Aboneaza-te</button>
+     </form>
+ </div>
+ <br>
+  <p>Powered by <a href="https://webautomation.ro" title="webautomation.ro" target="_blank" class="w3-hover-text-green">webautomation.ro</a> and 
+                <a href="https://www.w3schools.com" title="w3schools" target="_blank" class="w3-hover-text-green">w3schools.com</a>
+  </p>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
